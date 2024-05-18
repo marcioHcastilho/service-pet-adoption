@@ -8,15 +8,13 @@ module PetAdoption
   class Application < Rails::Application
     config.load_defaults 7.1
 
-    Dotenv::Railtie.load
-
-    # Configuração do Sidekiq
-    config.active_job.queue_adapter = :sidekiq
-
-    # Auto-load da pasta lib
+    # Load custom code from the lib directory
     config.autoload_paths += %W(#{config.root}/lib)
 
-    # Configuração para API
+    # Configure Active Job to use Sidekiq as the queue adapter
+    config.active_job.queue_adapter = :sidekiq
+
+    # Configure Rails as an API-only application
     config.api_only = true
   end
 end
