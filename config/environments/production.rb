@@ -62,8 +62,8 @@ Rails.application.configure do
 
   # Use Redis for caching in production.
   config.cache_store = :redis_cache_store, {
-    url: ENV["REDIS_URL"],
-    password: ENV["REDIS_PASSWORD"],
+    url: ENV["rediss://red-cp4egei1hbls73f0gic0:XdtJb5cUIw2kQHtb0Hre6BlGutklcUC4@oregon-redis.render.com:6379"],
+    password: ENV["XdtJb5cUIw2kQHtb0Hre6BlGutklcUC4"],
     ssl_params: {
       verify_mode: OpenSSL::SSL::VERIFY_NONE # Certifique-se de remover isso em um ambiente de produção real
     }
