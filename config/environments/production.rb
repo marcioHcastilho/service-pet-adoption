@@ -2,7 +2,7 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.redis = { url: ENV["rediss://red-cp4egei1hbls73f0gic0:XdtJb5cUIw2kQHtb0Hre6BlGutklcUC4@oregon-redis.render.com:6379"] || "redis://localhost:6379/0" }
+  config.redis = { url: ENV["REDIS_URL"] || "redis://localhost:6379/0" }
   # Code is not reloaded between requests.
   config.enable_reloading = false
 

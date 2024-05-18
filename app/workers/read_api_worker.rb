@@ -9,7 +9,7 @@ class ReadApiWorker
       next unless breed_info.present?
 
       Pet.create!(
-        name: breed_name, # Usando o nome da raça como nome do pet
+        name: breed_name,
         description: breed_info[:description],
         life_span: breed_info[:life_span],
         male_weight: breed_info[:male_weight],
