@@ -16,9 +16,9 @@ Getting Started
     Clone the repository:
     Bash
 
-    git clone https://github.com/your-username/pet-adoption-api.git
+    git clone https://github.com/Marciohenr1que/service-pet-adoption.git
 
-    Use o código com cuidado.
+   
 
 Install dependencies:
 
@@ -26,7 +26,7 @@ Install dependencies:
 cd pet-adoption-api
 bundle install
 
-Use o código com cuidado.
+
 
 Set up the database:
 
