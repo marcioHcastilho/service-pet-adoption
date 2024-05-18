@@ -23,7 +23,7 @@ Getting Started
 Install dependencies:
 
 
-cd pet-adoption-api
+cd service-pet-adoption
 bundle install
 
 
