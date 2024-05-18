@@ -31,6 +31,7 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
 
 gem 'sidekiq'
+gem 'foreman'
 
 gem 'rubocop', require: false
 gem 'dotenv-rails'
