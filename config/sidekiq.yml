@@ -4,5 +4,5 @@
 :queues:
   - default
 :redis:
-  :url: "redis://red-cp4egei1hbls73f0gic0:6379" 
+  :url: "rediss://red-cp4egei1hbls73f0gic0:XdtJb5cUIw2kQHtb0Hre6BlGutklcUC4@oregon-redis.render.com:6379" 
   
