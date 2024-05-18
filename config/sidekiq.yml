@@ -4,5 +4,5 @@
 :queues:
   - default
 :redis:
-  :url: "redis://localhost:6379" 
+  :url: "redis://red-cp4egei1hbls73f0gic0:6379" 
   
