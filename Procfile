@@ -1,3 +1,3 @@
 
-worker: bundle exec sidekiq -C config/sidekiq.yml
+worker: bundle sidekiq -C config/sidekiq.yml
 web: rails server -e production
