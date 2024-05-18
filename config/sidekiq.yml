@@ -1,0 +1,8 @@
+:verbose: false
+:concurrency: 5
+:pidfile: ./tmp/pids/sidekiq.pid
+:queues:
+  - default
+:redis:
+  :url: "redis://localhost:6379" 
+  

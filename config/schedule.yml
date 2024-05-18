@@ -1,0 +1,5 @@
+read_api_worker_job:
+  every: '1d'
+  class: 'ReadApiWorker'
+  queue: 'default'
+  at: '02:00'
