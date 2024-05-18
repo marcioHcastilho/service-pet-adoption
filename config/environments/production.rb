@@ -60,15 +60,6 @@ Rails.application.configure do
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
 
-  # Use Redis for caching in production.
-  config.cache_store = :redis_cache_store, {
-    url: ENV["rediss://red-cp4egei1hbls73f0gic0:XdtJb5cUIw2kQHtb0Hre6BlGutklcUC4@oregon-redis.render.com:6379"],
-    password: ENV["XdtJb5cUIw2kQHtb0Hre6BlGutklcUC4"],
-    ssl_params: {
-      verify_mode: OpenSSL::SSL::VERIFY_NONE # Certifique-se de remover isso em um ambiente de produção real
-    }
-  }
-
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter = :resque
   # config.active_job.queue_name_prefix = "pet_adoption_production"
