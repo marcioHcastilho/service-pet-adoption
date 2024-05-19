@@ -1,0 +1,2 @@
+class BreedInfo < ApplicationRecord
+end
