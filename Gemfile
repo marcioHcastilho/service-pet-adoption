@@ -32,7 +32,6 @@ gem "bootsnap", require: false
 gem 'redis'
 gem 'sidekiq'
 gem 'foreman'
-
 gem 'rubocop', require: false
 gem 'dotenv-rails'
 gem 'rswag-api'
