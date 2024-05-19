@@ -1,8 +1,11 @@
 Pet Adoption API
+https://service-pet-adoption.onrender.com
 
 Overview
 
-The Pet Adoption API is a RESTful API built with Ruby on Rails that empowers users to manage pet adoption listings and owner profiles. It fosters a seamless adoption experience for both pet seekers and shelters/owners.
+The Pet Adoption API is a RESTful API built with Ruby on Rails, designed to empower users in managing pet adoption listings and owner profiles. It facilitates a seamless adoption experience for both pet seekers and shelters/owners.
+
+It appears that you're utilizing the PostgreSQL database with the Pet Adoption API. PostgreSQL is renowned for its robust features and reliability, making it an excellent choice for storing pet and owner data within your application.
 
 Features
 
@@ -14,7 +17,7 @@ Features
 Getting Started
 
     Clone the repository:
-    Bash
+   
 
     git clone https://github.com/Marciohenr1que/service-pet-adoption.git
 
@@ -31,7 +34,7 @@ bundle install
 Set up the database:
 
 
-rails db:setup
+rails db:migrate
 
 
 
