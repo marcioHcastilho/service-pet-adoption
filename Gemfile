@@ -34,6 +34,7 @@ gem 'sidekiq'
 gem 'foreman'
 gem 'rubocop', require: false
 gem 'dotenv-rails'
+gem 'active_model_serializers'
 gem 'rswag-api'
 gem 'rswag-ui'
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]

@@ -1,39 +1,22 @@
 class PetsController < ApplicationController
-  before_action :set_pet, only: [:update, :destroy, :update_weight]
+  before_action :set_pet, only: [:update, :destroy, :update_weight, :show]
 
   def index
-    @pets = Pet.all
-    pets_with_details = []
-
-    @pets.each do |pet|
-      breed_info = DogApiService.get_breed_info(pet.breed)
-      pet_details = pet.attributes.symbolize_keys.slice(:id, :name, :pet_type, :breed, :weight, :owner_id, :created_at, :updated_at)
-      pet_details.merge!(breed_info.slice(:description, :life_span, :male_weight, :female_weight)) if breed_info.present? && breed_info[:breed].casecmp?(pet.breed)
-      pets_with_details << pet_details
-    end
-
-    render json: pets_with_details
+    pets = PetsService.all_pets_with_details
+    render json: pets, each_serializer: PetSerializer
   end
 
   def show
-    @pet = Pet.find(params[:id])
-    breed_info = DogApiService.get_breed_info(@pet.breed)
-
-    Rails.logger.info "Breed info #{breed_info.present? ? 'found' : 'not found'} for #{@pet.breed}"
-
-    @pet_details = @pet.attributes.symbolize_keys.slice(:id, :name, :pet_type, :breed, :weight, :owner_id, :created_at, :updated_at)
-    @pet_details.merge!(breed_info.slice(:description, :life_span, :male_weight, :female_weight)) if breed_info.present? && breed_info[:breed].casecmp?(@pet.breed)
-
-    render json: @pet_details
+    pet = PetsService.pet_with_details(@pet)
+    render json: pet, serializer: PetSerializer
   end
 
   def create
     @pet = Pet.new(pet_params)
 
     if @pet.save
-      render json: @pet, status: :created
-
-
+      pet = PetsService.pet_with_details(@pet)
+      render json: pet, serializer: PetSerializer, status: :created
     else
       render json: @pet.errors, status: :unprocessable_entity
     end
@@ -41,7 +24,8 @@ class PetsController < ApplicationController
 
   def update
     if @pet.update(pet_params)
-      render json: @pet
+      pet = PetsService.pet_with_details(@pet)
+      render json: pet, serializer: PetSerializer
     else
       render json: @pet.errors, status: :unprocessable_entity
     end
@@ -50,7 +34,8 @@ class PetsController < ApplicationController
   def update_weight
     new_weight = params[:weight]
     if @pet.update_weight(new_weight)
-      render json: @pet
+      pet = PetsService.pet_with_details(@pet)
+      render json: pet, serializer: PetSerializer
     else
       render json: @pet.errors, status: :unprocessable_entity
     end

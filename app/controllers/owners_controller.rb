@@ -1,12 +1,12 @@
 class OwnersController < ApplicationController
   def index
     @owners = Owner.includes(:pets).all
-    render json: @owners.to_json(include: { pets: { only: [:id, :name, :pet_type, :breed, :weight] } })
+    render json: @owners
   end
 
   def show
     @owner = Owner.includes(:pets).find(params[:id])
-    render json: @owner.to_json(include: { pets: { only: [:id, :name, :pet_type, :breed, :weight] } })
+    render json: @owner
   end
 
   def create
@@ -28,7 +28,6 @@ class OwnersController < ApplicationController
   end
 
   private
-
 
   def owner_params
     params.require(:owner).permit(:name, :email, :phone)

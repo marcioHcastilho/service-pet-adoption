@@ -1,7 +1,5 @@
 class Owner < ApplicationRecord
+  include Validatable
+  include OwnerValidatable
   has_many :pets
-
-  validates :name, presence: true
-  validates :email, presence: true
-  validates :phone, presence: true
 end
