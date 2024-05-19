@@ -1,5 +1,5 @@
 read_api_worker_job:
-  every: '1d'
-  class: 'ReadApiWorker'
-  queue: 'default'
-  at: '12:00'
+  cron: '0 12 * * *'
+  class: ReadApiWorker
+  queue: default
+
