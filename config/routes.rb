@@ -1,7 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  root to: redirect('/swagger-ui/docs/index.html') # Define a rota raiz para redirecionar para o Swagger UI
+  root to: redirect('/swagger-ui/docs/index.html') 
   mount Sidekiq::Web => '/sidekiq'
 
   resources :pets, only: [:create, :update, :destroy, :index, :show]
